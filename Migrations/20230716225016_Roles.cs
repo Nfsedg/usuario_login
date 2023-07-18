@@ -29,23 +29,23 @@ namespace Proyecto_Final_23AM.Migrations
                     Nombre = table.Column<string>(type: "text", nullable: false),
                     Username = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
-                    Fkrol = table.Column<int>(type: "int", nullable: true)
+                    FkRol = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.PkUsuario);
                     table.ForeignKey(
-                        name: "FK_Usuarios_Roles_Fkrol",
-                        column: x => x.Fkrol,
+                        name: "FK_Usuarios_Roles_FkRol",
+                        column: x => x.FkRol,
                         principalTable: "Roles",
                         principalColumn: "PkRol",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_Fkrol",
+                name: "IX_Usuarios_FkRol",
                 table: "Usuarios",
-                column: "Fkrol");
+                column: "FkRol");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

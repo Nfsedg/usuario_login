@@ -9,7 +9,7 @@ using Proyecto_Final_23AM.Context;
 namespace Proyecto_Final_23AM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230711170603_Roles")]
+    [Migration("20230716225016_Roles")]
     partial class Roles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace Proyecto_Final_23AM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("Fkrol")
+                    b.Property<int?>("FkRol")
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
@@ -57,7 +57,7 @@ namespace Proyecto_Final_23AM.Migrations
 
                     b.HasKey("PkUsuario");
 
-                    b.HasIndex("Fkrol");
+                    b.HasIndex("FkRol");
 
                     b.ToTable("Usuarios");
                 });
@@ -66,7 +66,7 @@ namespace Proyecto_Final_23AM.Migrations
                 {
                     b.HasOne("Proyecto_Final_23AM.Entities.Rol", "Roles")
                         .WithMany()
-                        .HasForeignKey("Fkrol");
+                        .HasForeignKey("FkRol");
 
                     b.Navigation("Roles");
                 });

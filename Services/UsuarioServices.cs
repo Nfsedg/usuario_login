@@ -50,6 +50,41 @@ namespace Proyecto_Final_23AM.Services
                 throw new Exception("Sucedió un error" + ex.Message);
             }
         }
+        public List<Rol> GetRoles()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Rol> roles = _context.Roles.ToList();
+                    return roles;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error: " + ex.Message);
+            }
+
+        }
+        public Usuario GetUsuario(int pkUsuario)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Usuario usuario = _context.Usuarios.FirstOrDefault(u => u.PkUsuario == pkUsuario);
+                    return usuario;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al obtener el usuario: " + ex.Message);
+            }
+        }
+
+
     }
 }
 

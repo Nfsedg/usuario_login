@@ -20,13 +20,13 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkUsuario}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
-                <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding Username}" />
                 <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" />
+                            <Button Content="Edit" Click="BtnEdit_Click"  />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -40,5 +40,8 @@
             </DataGrid.Columns>
 
         </DataGrid>
+        <ComboBox x:Name="SelectRol"  HorizontalAlignment="Left" Height="25" Margin="51,311,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Roles" HorizontalAlignment="Left" Height="25" Margin="53,286,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.353,-0.798"/>
+        <TextBox x:Name="TxtPkUser" HorizontalAlignment="Left" Height="21" Margin="50,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="True" />
     </Grid>
 </Window>

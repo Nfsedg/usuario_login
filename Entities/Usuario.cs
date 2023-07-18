@@ -18,7 +18,7 @@ namespace Proyecto_Final_23AM.Entities
 
         [ForeignKey("Roles")]
 
-        public int? Pkrol { get; set; }
+        public int? FkRol { get; set; }
 
         public Rol Roles { get; set; }
     }
